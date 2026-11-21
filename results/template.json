@@ -1,0 +1,2355 @@
+{
+  "meta": {
+    "date": "2026-11-21",
+    "python": "3.13.18",
+    "sqlite": "3.45.1",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz",
+    "generator": "template",
+    "model": "none (rules)",
+    "seed": "none (deterministic)"
+  },
+  "by_repairs": {
+    "0": {
+      "summary": {
+        "dev/all": {
+          "correct": 139,
+          "n": 140,
+          "accuracy": 0.9928571428571429,
+          "ci95": [
+            0.9606506328243919,
+            0.9987380280358878
+          ]
+        },
+        "dev/tier1": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 1.0,
+          "ci95": [
+            0.9286499658256813,
+            1.0
+          ]
+        },
+        "dev/tier2": {
+          "correct": 44,
+          "n": 45,
+          "accuracy": 0.9777777777777777,
+          "ci95": [
+            0.8843305361128119,
+            0.9960665024772425
+          ]
+        },
+        "dev/tier3": {
+          "correct": 45,
+          "n": 45,
+          "accuracy": 1.0,
+          "ci95": [
+            0.9213457380593594,
+            1.0
+          ]
+        },
+        "heldout/all": {
+          "correct": 15,
+          "n": 70,
+          "accuracy": 0.21428571428571427,
+          "ci95": [
+            0.13438585667978442,
+            0.32391407181580606
+          ]
+        },
+        "heldout/tier1": {
+          "correct": 5,
+          "n": 20,
+          "accuracy": 0.25,
+          "ci95": [
+            0.11186005278940309,
+            0.4687050099580636
+          ]
+        },
+        "heldout/tier2": {
+          "correct": 10,
+          "n": 25,
+          "accuracy": 0.4,
+          "ci95": [
+            0.23403057664190918,
+            0.5926087221487266
+          ]
+        },
+        "heldout/tier3": {
+          "correct": 0,
+          "n": 25,
+          "accuracy": 0.0,
+          "ci95": [
+            0.0,
+            0.13319649395317873
+          ]
+        }
+      },
+      "errors": 0,
+      "no_sql": 40,
+      "repairs_used": 0,
+      "mean_seconds": 0.0004471428571428571
+    },
+    "1": {
+      "summary": {
+        "dev/all": {
+          "correct": 139,
+          "n": 140,
+          "accuracy": 0.9928571428571429,
+          "ci95": [
+            0.9606506328243919,
+            0.9987380280358878
+          ]
+        },
+        "dev/tier1": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 1.0,
+          "ci95": [
+            0.9286499658256813,
+            1.0
+          ]
+        },
+        "dev/tier2": {
+          "correct": 44,
+          "n": 45,
+          "accuracy": 0.9777777777777777,
+          "ci95": [
+            0.8843305361128119,
+            0.9960665024772425
+          ]
+        },
+        "dev/tier3": {
+          "correct": 45,
+          "n": 45,
+          "accuracy": 1.0,
+          "ci95": [
+            0.9213457380593594,
+            1.0
+          ]
+        },
+        "heldout/all": {
+          "correct": 15,
+          "n": 70,
+          "accuracy": 0.21428571428571427,
+          "ci95": [
+            0.13438585667978442,
+            0.32391407181580606
+          ]
+        },
+        "heldout/tier1": {
+          "correct": 5,
+          "n": 20,
+          "accuracy": 0.25,
+          "ci95": [
+            0.11186005278940309,
+            0.4687050099580636
+          ]
+        },
+        "heldout/tier2": {
+          "correct": 10,
+          "n": 25,
+          "accuracy": 0.4,
+          "ci95": [
+            0.23403057664190918,
+            0.5926087221487266
+          ]
+        },
+        "heldout/tier3": {
+          "correct": 0,
+          "n": 25,
+          "accuracy": 0.0,
+          "ci95": [
+            0.0,
+            0.13319649395317873
+          ]
+        }
+      },
+      "errors": 0,
+      "no_sql": 40,
+      "repairs_used": 0,
+      "mean_seconds": 0.00042
+    },
+    "2": {
+      "summary": {
+        "dev/all": {
+          "correct": 139,
+          "n": 140,
+          "accuracy": 0.9928571428571429,
+          "ci95": [
+            0.9606506328243919,
+            0.9987380280358878
+          ]
+        },
+        "dev/tier1": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 1.0,
+          "ci95": [
+            0.9286499658256813,
+            1.0
+          ]
+        },
+        "dev/tier2": {
+          "correct": 44,
+          "n": 45,
+          "accuracy": 0.9777777777777777,
+          "ci95": [
+            0.8843305361128119,
+            0.9960665024772425
+          ]
+        },
+        "dev/tier3": {
+          "correct": 45,
+          "n": 45,
+          "accuracy": 1.0,
+          "ci95": [
+            0.9213457380593594,
+            1.0
+          ]
+        },
+        "heldout/all": {
+          "correct": 15,
+          "n": 70,
+          "accuracy": 0.21428571428571427,
+          "ci95": [
+            0.13438585667978442,
+            0.32391407181580606
+          ]
+        },
+        "heldout/tier1": {
+          "correct": 5,
+          "n": 20,
+          "accuracy": 0.25,
+          "ci95": [
+            0.11186005278940309,
+            0.4687050099580636
+          ]
+        },
+        "heldout/tier2": {
+          "correct": 10,
+          "n": 25,
+          "accuracy": 0.4,
+          "ci95": [
+            0.23403057664190918,
+            0.5926087221487266
+          ]
+        },
+        "heldout/tier3": {
+          "correct": 0,
+          "n": 25,
+          "accuracy": 0.0,
+          "ci95": [
+            0.0,
+            0.13319649395317873
+          ]
+        }
+      },
+      "errors": 0,
+      "no_sql": 40,
+      "repairs_used": 0,
+      "mean_seconds": 0.0004014285714285714
+    }
+  },
+  "records": [
+    {
+      "id": "t1_customers_in_city_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Ashford'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_customers_in_city_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Brookvale'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_customers_in_city_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Cedar Point'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_customers_in_city_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Dunmore'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_customers_in_city_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Elmstead'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_products_in_category_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM products WHERE category = 'Coffee'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_products_in_category_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM products WHERE category = 'Tea'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_products_in_category_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM products WHERE category = 'Mugs'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_products_in_category_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM products WHERE category = 'Brewing Gear'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_products_in_category_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM products WHERE category = 'Candles'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_expense_category_year_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM expenses WHERE category = 'rent' AND expense_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_expense_category_year_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM expenses WHERE category = 'utilities' AND expense_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_expense_category_year_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM expenses WHERE category = 'supplies' AND expense_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_expense_category_year_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM expenses WHERE category = 'marketing' AND expense_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_expense_category_year_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM expenses WHERE category = 'payroll' AND expense_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_orders_channel_month_1",
+      "split": "heldout",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'online' AND o.order_date BETWEEN '2025-03-01' AND '2025-03-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_orders_channel_month_2",
+      "split": "heldout",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'store' AND o.order_date BETWEEN '2025-07-01' AND '2025-07-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_orders_channel_month_3",
+      "split": "heldout",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'online' AND o.order_date BETWEEN '2025-12-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_orders_channel_month_4",
+      "split": "heldout",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'store' AND o.order_date BETWEEN '2026-02-01' AND '2026-02-28'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_orders_channel_month_5",
+      "split": "heldout",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'online' AND o.order_date BETWEEN '2026-05-01' AND '2026-05-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_products_by_price_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name, unit_price FROM products WHERE category = 'Coffee' ORDER BY unit_price DESC, name",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_products_by_price_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name, unit_price FROM products WHERE category = 'Tea' ORDER BY unit_price DESC, name",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_products_by_price_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name, unit_price FROM products WHERE category = 'Mugs' ORDER BY unit_price DESC, name",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_products_by_price_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name, unit_price FROM products WHERE category = 'Brewing Gear' ORDER BY unit_price DESC, name",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_products_by_price_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name, unit_price FROM products WHERE category = 'Gift Cards' ORDER BY unit_price DESC, name",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_customers_no_email_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Ashford' AND c.email IS NULL",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_customers_no_email_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Brookvale' AND c.email IS NULL",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_customers_no_email_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Cedar Point' AND c.email IS NULL",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_customers_no_email_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Dunmore' AND c.email IS NULL",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_customers_no_email_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM customers c WHERE 1 = 1 AND c.city = 'Elmstead' AND c.email IS NULL",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_avg_invoice_month_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2025-01-01' AND '2025-01-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_avg_invoice_month_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2025-04-01' AND '2025-04-30'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_avg_invoice_month_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2025-08-01' AND '2025-08-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_avg_invoice_month_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2025-11-01' AND '2025-11-30'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_avg_invoice_month_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2026-03-01' AND '2026-03-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_refunds_total_1",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_refunds_total_2",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_refunds_total_3",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_refunds_total_4",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_refunds_total_5",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_staff_by_role_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name FROM employees WHERE role = 'barista'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_staff_by_role_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name FROM employees WHERE role = 'roaster'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_staff_by_role_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name FROM employees WHERE role = 'manager'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_staff_by_role_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name FROM employees WHERE role = 'bookkeeper'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_staff_by_role_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT name FROM employees WHERE role = 'delivery'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_largest_expense_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT expense_date, amount FROM expenses WHERE category = 'utilities' ORDER BY amount DESC LIMIT 1",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_largest_expense_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT expense_date, amount FROM expenses WHERE category = 'supplies' ORDER BY amount DESC LIMIT 1",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_largest_expense_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT expense_date, amount FROM expenses WHERE category = 'marketing' ORDER BY amount DESC LIMIT 1",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_largest_expense_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT expense_date, amount FROM expenses WHERE category = 'repairs' ORDER BY amount DESC LIMIT 1",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_largest_expense_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT expense_date, amount FROM expenses WHERE category = 'payroll' ORDER BY amount DESC LIMIT 1",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t1_orders_by_status_year_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'cancelled' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_orders_by_status_year_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'refunded' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_orders_by_status_year_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'completed' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_orders_by_status_year_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'cancelled' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_orders_by_status_year_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'refunded' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_products_still_sold_1",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_products_still_sold_2",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_products_still_sold_3",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_products_still_sold_4",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_products_still_sold_5",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t1_net_by_method_month_1",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM payments WHERE method = 'card' AND payment_date BETWEEN '2025-02-01' AND '2025-02-28'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_net_by_method_month_2",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM payments WHERE method = 'cash' AND payment_date BETWEEN '2025-06-01' AND '2025-06-30'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_net_by_method_month_3",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM payments WHERE method = 'transfer' AND payment_date BETWEEN '2025-10-01' AND '2025-10-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_net_by_method_month_4",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM payments WHERE method = 'card' AND payment_date BETWEEN '2026-01-01' AND '2026-01-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_net_by_method_month_5",
+      "split": "dev",
+      "tier": 1,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(amount), 2) FROM payments WHERE method = 'cash' AND payment_date BETWEEN '2026-04-01' AND '2026-04-30'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t1_online_not_shipped_1",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'online' AND o.order_date BETWEEN '2025-01-01' AND '2025-01-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_online_not_shipped_2",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'online' AND o.order_date BETWEEN '2025-05-01' AND '2025-05-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_online_not_shipped_3",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'online' AND o.order_date BETWEEN '2025-09-01' AND '2025-09-30'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t1_online_not_shipped_4",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'online' AND o.order_date BETWEEN '2025-12-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t1_online_not_shipped_5",
+      "split": "heldout",
+      "tier": 1,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.channel = 'online' AND o.order_date BETWEEN '2026-06-01' AND '2026-06-30'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t2_category_sales_year_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Coffee' AND o.status <> 'cancelled' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_category_sales_year_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Tea' AND o.status <> 'cancelled' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_category_sales_year_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Mugs' AND o.status <> 'cancelled' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_category_sales_year_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Candles' AND o.status <> 'cancelled' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_category_sales_year_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Brewing Gear' AND o.status <> 'cancelled' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_top_customers_invoiced_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT c.name, ROUND(SUM(i.amount), 2) AS total FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY c.customer_id ORDER BY total DESC, c.name LIMIT 3",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_top_customers_invoiced_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT c.name, ROUND(SUM(i.amount), 2) AS total FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY c.customer_id ORDER BY total DESC, c.name LIMIT 5",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_top_customers_invoiced_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT c.name, ROUND(SUM(i.amount), 2) AS total FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2026-01-01' AND '2026-12-31' GROUP BY c.customer_id ORDER BY total DESC, c.name LIMIT 3",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_top_customers_invoiced_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT c.name, ROUND(SUM(i.amount), 2) AS total FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2026-01-01' AND '2026-12-31' GROUP BY c.customer_id ORDER BY total DESC, c.name LIMIT 5",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_top_customers_invoiced_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT c.name, ROUND(SUM(i.amount), 2) AS total FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY c.customer_id ORDER BY total DESC, c.name LIMIT 10",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_units_of_product_1",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'cancelled' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_units_of_product_2",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_units_of_product_3",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'cancelled' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_units_of_product_4",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_units_of_product_5",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'cancelled' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_orders_by_city_year_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Ashford' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_orders_by_city_year_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Brookvale' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_orders_by_city_year_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Cedar Point' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t2_orders_by_city_year_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Dunmore' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t2_orders_by_city_year_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Elmstead' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t2_invoiced_by_employee_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN employees e ON e.employee_id = o.employee_id WHERE e.name = 'Avel Torlom'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t2_invoiced_by_employee_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN employees e ON e.employee_id = o.employee_id WHERE e.name = 'Orla Norfen'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_invoiced_by_employee_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN employees e ON e.employee_id = o.employee_id WHERE e.name = 'Mira Pelkes'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_invoiced_by_employee_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN employees e ON e.employee_id = o.employee_id WHERE e.name = 'Soren Yarrowsel'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_invoiced_by_employee_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN employees e ON e.employee_id = o.employee_id WHERE e.name = 'Mira Wickvane'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_sales_by_channel_1",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_sales_by_channel_2",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_sales_by_channel_3",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_sales_by_channel_4",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_sales_by_channel_5",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_invoices_without_payment_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id LEFT JOIN payments p ON p.invoice_id = i.invoice_id WHERE p.payment_id IS NULL AND c.city = 'Ashford'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_invoices_without_payment_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id LEFT JOIN payments p ON p.invoice_id = i.invoice_id WHERE p.payment_id IS NULL AND c.city = 'Brookvale'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_invoices_without_payment_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id LEFT JOIN payments p ON p.invoice_id = i.invoice_id WHERE p.payment_id IS NULL AND c.city = 'Cedar Point'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_invoices_without_payment_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id LEFT JOIN payments p ON p.invoice_id = i.invoice_id WHERE p.payment_id IS NULL AND c.city = 'Dunmore'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_invoices_without_payment_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id LEFT JOIN payments p ON p.invoice_id = i.invoice_id WHERE p.payment_id IS NULL AND c.city = 'Elmstead'",
+      "seconds": 0.0008
+    },
+    {
+      "id": "t2_avg_invoice_segment_1",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.segment = 'retail' AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t2_avg_invoice_segment_2",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.segment = 'wholesale' AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t2_avg_invoice_segment_3",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.segment = 'retail' AND i.issue_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t2_avg_invoice_segment_4",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.segment = 'wholesale' AND i.issue_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t2_avg_invoice_segment_5",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(i.amount), 2) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Dunmore' AND c.segment = 'retail' AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t2_low_category_units_month_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT p.category FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2025-02-01' AND '2025-02-28' GROUP BY p.category ORDER BY SUM(oi.quantity), p.category LIMIT 1",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_low_category_units_month_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT p.category FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2025-06-01' AND '2025-06-30' GROUP BY p.category ORDER BY SUM(oi.quantity), p.category LIMIT 1",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_low_category_units_month_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT p.category FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2025-10-01' AND '2025-10-31' GROUP BY p.category ORDER BY SUM(oi.quantity), p.category LIMIT 1",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_low_category_units_month_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT p.category FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2026-01-01' AND '2026-01-31' GROUP BY p.category ORDER BY SUM(oi.quantity), p.category LIMIT 1",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_low_category_units_month_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT p.category FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2026-06-01' AND '2026-06-30' GROUP BY p.category ORDER BY SUM(oi.quantity), p.category LIMIT 1",
+      "seconds": 0.0007
+    },
+    {
+      "id": "t2_refunded_orders_city_1",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'refunded' AND c.city = 'Ashford'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_refunded_orders_city_2",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'refunded' AND c.city = 'Brookvale'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_refunded_orders_city_3",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'refunded' AND c.city = 'Cedar Point'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t2_refunded_orders_city_4",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'refunded' AND c.city = 'Dunmore'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t2_refunded_orders_city_5",
+      "split": "heldout",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.status = 'refunded' AND c.city = 'Elmstead'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_customer_net_paid_1",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_customer_net_paid_2",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_customer_net_paid_3",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_customer_net_paid_4",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_customer_net_paid_5",
+      "split": "heldout",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t2_discounted_lines_category_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM order_items oi JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Coffee' AND oi.discount IS NOT NULL",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_discounted_lines_category_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM order_items oi JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Tea' AND oi.discount IS NOT NULL",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_discounted_lines_category_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM order_items oi JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Mugs' AND oi.discount IS NOT NULL",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_discounted_lines_category_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM order_items oi JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Brewing Gear' AND oi.discount IS NOT NULL",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_discounted_lines_category_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM order_items oi JOIN products p ON p.product_id = oi.product_id WHERE p.category = 'Candles' AND oi.discount IS NOT NULL",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t2_reports_to_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name FROM employees e JOIN employees b ON b.employee_id = e.manager_id WHERE b.name = 'Quin Pelwick'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t2_reports_to_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name FROM employees e JOIN employees b ON b.employee_id = e.manager_id WHERE b.name = 'Soren Yarrowsel' AND e.role = 'manager'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t2_reports_to_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name FROM employees e JOIN employees b ON b.employee_id = e.manager_id WHERE b.name = 'Soren Yarrowsel' AND e.role = 'barista'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t2_reports_to_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name FROM employees e JOIN employees b ON b.employee_id = e.manager_id WHERE b.name = 'Soren Yarrowsel' AND e.role = 'roaster'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t2_reports_to_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name FROM employees e JOIN employees b ON b.employee_id = e.manager_id WHERE b.name = 'Quin Pelwick' AND e.role = 'bookkeeper'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t2_payroll_for_employee_1",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(x.amount), 2) FROM expenses x JOIN employees e ON e.employee_id = x.employee_id WHERE x.category = 'payroll' AND e.name = 'Avel Torlom' AND x.expense_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t2_payroll_for_employee_2",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(x.amount), 2) FROM expenses x JOIN employees e ON e.employee_id = x.employee_id WHERE x.category = 'payroll' AND e.name = 'Rhea Dunyarrow' AND x.expense_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t2_payroll_for_employee_3",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(x.amount), 2) FROM expenses x JOIN employees e ON e.employee_id = x.employee_id WHERE x.category = 'payroll' AND e.name = 'Orla Quillquill' AND x.expense_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t2_payroll_for_employee_4",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(x.amount), 2) FROM expenses x JOIN employees e ON e.employee_id = x.employee_id WHERE x.category = 'payroll' AND e.name = 'Mira Wickvane' AND x.expense_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0002
+    },
+    {
+      "id": "t2_payroll_for_employee_5",
+      "split": "dev",
+      "tier": 2,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(SUM(x.amount), 2) FROM expenses x JOIN employees e ON e.employee_id = x.employee_id WHERE x.category = 'payroll' AND e.name = 'Soren Yarrowsel' AND x.expense_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t3_invoiced_by_month_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT strftime('%Y-%m', issue_date) AS m, ROUND(SUM(amount), 2) FROM invoices WHERE 1 = 1 AND issue_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY m ORDER BY m",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t3_invoiced_by_month_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT strftime('%Y-%m', issue_date) AS m, ROUND(SUM(amount), 2) FROM invoices WHERE 1 = 1 AND issue_date BETWEEN '2026-01-01' AND '2026-06-30' GROUP BY m ORDER BY m",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t3_invoiced_by_month_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT strftime('%Y-%m', issue_date) AS m, ROUND(SUM(amount), 2) FROM invoices WHERE 1 = 1 AND issue_date BETWEEN '2025-01-01' AND '2025-03-31' GROUP BY m ORDER BY m",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_invoiced_by_month_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT strftime('%Y-%m', issue_date) AS m, ROUND(SUM(amount), 2) FROM invoices WHERE 1 = 1 AND issue_date BETWEEN '2025-10-01' AND '2025-12-31' GROUP BY m ORDER BY m",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_invoiced_by_month_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT strftime('%Y-%m', issue_date) AS m, ROUND(SUM(amount), 2) FROM invoices WHERE 1 = 1 AND issue_date BETWEEN '2026-04-01' AND '2026-06-30' GROUP BY m ORDER BY m",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_biggest_mom_increase_1",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_biggest_mom_increase_2",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_biggest_mom_increase_3",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_biggest_mom_increase_4",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_biggest_mom_increase_5",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_running_expense_total_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT m, ROUND(SUM(s) OVER (ORDER BY m), 2) FROM (SELECT strftime('%Y-%m', expense_date) AS m, SUM(amount) AS s FROM expenses WHERE category = 'supplies' AND expense_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY m) ORDER BY m",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_running_expense_total_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT m, ROUND(SUM(s) OVER (ORDER BY m), 2) FROM (SELECT strftime('%Y-%m', expense_date) AS m, SUM(amount) AS s FROM expenses WHERE category = 'utilities' AND expense_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY m) ORDER BY m",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_running_expense_total_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT m, ROUND(SUM(s) OVER (ORDER BY m), 2) FROM (SELECT strftime('%Y-%m', expense_date) AS m, SUM(amount) AS s FROM expenses WHERE category = 'payroll' AND expense_date BETWEEN '2026-01-01' AND '2026-12-31' GROUP BY m) ORDER BY m",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t3_running_expense_total_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT m, ROUND(SUM(s) OVER (ORDER BY m), 2) FROM (SELECT strftime('%Y-%m', expense_date) AS m, SUM(amount) AS s FROM expenses WHERE category = 'marketing' AND expense_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY m) ORDER BY m",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t3_running_expense_total_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT m, ROUND(SUM(s) OVER (ORDER BY m), 2) FROM (SELECT strftime('%Y-%m', expense_date) AS m, SUM(amount) AS s FROM expenses WHERE category = 'supplies' AND expense_date BETWEEN '2026-01-01' AND '2026-12-31' GROUP BY m) ORDER BY m",
+      "seconds": 0.0003
+    },
+    {
+      "id": "t3_cash_profit_month_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(amount), 0) FROM payments WHERE payment_date BETWEEN '2025-03-01' AND '2025-03-31') - (SELECT COALESCE(SUM(amount), 0) FROM expenses WHERE expense_date BETWEEN '2025-03-01' AND '2025-03-31'), 2)",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_cash_profit_month_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(amount), 0) FROM payments WHERE payment_date BETWEEN '2025-07-01' AND '2025-07-31') - (SELECT COALESCE(SUM(amount), 0) FROM expenses WHERE expense_date BETWEEN '2025-07-01' AND '2025-07-31'), 2)",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_cash_profit_month_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(amount), 0) FROM payments WHERE payment_date BETWEEN '2025-11-01' AND '2025-11-30') - (SELECT COALESCE(SUM(amount), 0) FROM expenses WHERE expense_date BETWEEN '2025-11-01' AND '2025-11-30'), 2)",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_cash_profit_month_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(amount), 0) FROM payments WHERE payment_date BETWEEN '2026-02-01' AND '2026-02-28') - (SELECT COALESCE(SUM(amount), 0) FROM expenses WHERE expense_date BETWEEN '2026-02-01' AND '2026-02-28'), 2)",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_cash_profit_month_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(amount), 0) FROM payments WHERE payment_date BETWEEN '2026-05-01' AND '2026-05-31') - (SELECT COALESCE(SUM(amount), 0) FROM expenses WHERE expense_date BETWEEN '2026-05-01' AND '2026-05-31'), 2)",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_best_product_per_category_1",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0002
+    },
+    {
+      "id": "t3_best_product_per_category_2",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_best_product_per_category_3",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_best_product_per_category_4",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_best_product_per_category_5",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_customers_both_years_1",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_customers_both_years_2",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Ashford' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_customers_both_years_3",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Dunmore' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_customers_both_years_4",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.segment = 'wholesale' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_customers_both_years_5",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Elmstead' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_first_time_customers_month_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM (SELECT customer_id, MIN(order_date) AS f FROM orders GROUP BY customer_id) WHERE f BETWEEN '2025-01-01' AND '2025-01-31'",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t3_first_time_customers_month_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM (SELECT customer_id, MIN(order_date) AS f FROM orders GROUP BY customer_id) WHERE f BETWEEN '2025-02-01' AND '2025-02-28'",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t3_first_time_customers_month_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM (SELECT customer_id, MIN(order_date) AS f FROM orders GROUP BY customer_id) WHERE f BETWEEN '2025-06-01' AND '2025-06-30'",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t3_first_time_customers_month_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM (SELECT customer_id, MIN(order_date) AS f FROM orders GROUP BY customer_id) WHERE f BETWEEN '2025-10-01' AND '2025-10-31'",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_first_time_customers_month_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM (SELECT customer_id, MIN(order_date) AS f FROM orders GROUP BY customer_id) WHERE f BETWEEN '2026-03-01' AND '2026-03-31'",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t3_days_to_pay_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(julianday(fp.d) - julianday(i.issue_date)), 2) FROM invoices i JOIN (SELECT invoice_id, MIN(payment_date) AS d FROM payments GROUP BY invoice_id) fp ON fp.invoice_id = i.invoice_id JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.segment = 'wholesale' AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_days_to_pay_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(julianday(fp.d) - julianday(i.issue_date)), 2) FROM invoices i JOIN (SELECT invoice_id, MIN(payment_date) AS d FROM payments GROUP BY invoice_id) fp ON fp.invoice_id = i.invoice_id JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.segment = 'wholesale' AND i.issue_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_days_to_pay_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(julianday(fp.d) - julianday(i.issue_date)), 2) FROM invoices i JOIN (SELECT invoice_id, MIN(payment_date) AS d FROM payments GROUP BY invoice_id) fp ON fp.invoice_id = i.invoice_id JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.0011
+    },
+    {
+      "id": "t3_days_to_pay_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(julianday(fp.d) - julianday(i.issue_date)), 2) FROM invoices i JOIN (SELECT invoice_id, MIN(payment_date) AS d FROM payments GROUP BY invoice_id) fp ON fp.invoice_id = i.invoice_id JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Brookvale' AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_days_to_pay_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(AVG(julianday(fp.d) - julianday(i.issue_date)), 2) FROM invoices i JOIN (SELECT invoice_id, MIN(payment_date) AS d FROM payments GROUP BY invoice_id) fp ON fp.invoice_id = i.invoice_id JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id WHERE 1 = 1 AND c.city = 'Ashford' AND c.segment = 'wholesale' AND i.issue_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_overdue_invoices_1",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_overdue_invoices_2",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id LEFT JOIN payments p ON p.invoice_id = i.invoice_id WHERE p.payment_id IS NULL",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_overdue_invoices_3",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_overdue_invoices_4",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT COUNT(*) FROM invoices i JOIN orders o ON o.order_id = i.order_id JOIN customers c ON c.customer_id = o.customer_id LEFT JOIN payments p ON p.invoice_id = i.invoice_id WHERE p.payment_id IS NULL",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_overdue_invoices_5",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_category_share_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(100.0 * SUM(CASE WHEN p.category = 'Coffee' THEN oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0)) ELSE 0 END) / SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_category_share_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(100.0 * SUM(CASE WHEN p.category = 'Tea' THEN oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0)) ELSE 0 END) / SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_category_share_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(100.0 * SUM(CASE WHEN p.category = 'Brewing Gear' THEN oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0)) ELSE 0 END) / SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_category_share_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(100.0 * SUM(CASE WHEN p.category = 'Gift Cards' THEN oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0)) ELSE 0 END) / SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2026-01-01' AND '2026-12-31'",
+      "seconds": 0.0009
+    },
+    {
+      "id": "t3_category_share_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND(100.0 * SUM(CASE WHEN p.category = 'Candles' THEN oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0)) ELSE 0 END) / SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 2) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31'",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_quarter_change_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Coffee' AND o.order_date BETWEEN '2025-04-01' AND '2025-06-30') - (SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Coffee' AND o.order_date BETWEEN '2025-01-01' AND '2025-03-31'), 2)",
+      "seconds": 0.0011
+    },
+    {
+      "id": "t3_quarter_change_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Tea' AND o.order_date BETWEEN '2025-07-01' AND '2025-09-30') - (SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Tea' AND o.order_date BETWEEN '2025-04-01' AND '2025-06-30'), 2)",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_quarter_change_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Mugs' AND o.order_date BETWEEN '2025-10-01' AND '2025-12-31') - (SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Mugs' AND o.order_date BETWEEN '2025-07-01' AND '2025-09-30'), 2)",
+      "seconds": 0.001
+    },
+    {
+      "id": "t3_quarter_change_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Coffee' AND o.order_date BETWEEN '2026-01-01' AND '2026-03-31') - (SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Coffee' AND o.order_date BETWEEN '2025-10-01' AND '2025-12-31'), 2)",
+      "seconds": 0.0011
+    },
+    {
+      "id": "t3_quarter_change_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT ROUND((SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Brewing Gear' AND o.order_date BETWEEN '2026-04-01' AND '2026-06-30') - (SELECT COALESCE(SUM(oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))), 0) FROM order_items oi JOIN orders o ON o.order_id = oi.order_id JOIN products p ON p.product_id = oi.product_id WHERE o.status <> 'cancelled' AND p.category = 'Brewing Gear' AND o.order_date BETWEEN '2026-01-01' AND '2026-03-31'), 2)",
+      "seconds": 0.0011
+    },
+    {
+      "id": "t3_top_customer_per_city_1",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_top_customer_per_city_2",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_top_customer_per_city_3",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_top_customer_per_city_4",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_top_customer_per_city_5",
+      "split": "heldout",
+      "tier": 3,
+      "correct": false,
+      "repairs": 0,
+      "error": "no SQL: no template fits this question",
+      "sql": null,
+      "seconds": 0.0001
+    },
+    {
+      "id": "t3_busiest_weekday_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT CASE strftime('%w', order_date) WHEN '0' THEN 'Sunday' WHEN '1' THEN 'Monday' WHEN '2' THEN 'Tuesday' WHEN '3' THEN 'Wednesday' WHEN '4' THEN 'Thursday' WHEN '5' THEN 'Friday' ELSE 'Saturday' END FROM orders WHERE 1 = 1 AND channel = 'store' AND order_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY strftime('%w', order_date) ORDER BY COUNT(*) DESC, strftime('%w', order_date) LIMIT 1",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t3_busiest_weekday_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT CASE strftime('%w', order_date) WHEN '0' THEN 'Sunday' WHEN '1' THEN 'Monday' WHEN '2' THEN 'Tuesday' WHEN '3' THEN 'Wednesday' WHEN '4' THEN 'Thursday' WHEN '5' THEN 'Friday' ELSE 'Saturday' END FROM orders WHERE 1 = 1 AND channel = 'online' AND order_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY strftime('%w', order_date) ORDER BY COUNT(*) DESC, strftime('%w', order_date) LIMIT 1",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_busiest_weekday_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT CASE strftime('%w', order_date) WHEN '0' THEN 'Sunday' WHEN '1' THEN 'Monday' WHEN '2' THEN 'Tuesday' WHEN '3' THEN 'Wednesday' WHEN '4' THEN 'Thursday' WHEN '5' THEN 'Friday' ELSE 'Saturday' END FROM orders WHERE 1 = 1 AND channel = 'store' AND order_date BETWEEN '2026-01-01' AND '2026-12-31' GROUP BY strftime('%w', order_date) ORDER BY COUNT(*) DESC, strftime('%w', order_date) LIMIT 1",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_busiest_weekday_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT CASE strftime('%w', order_date) WHEN '0' THEN 'Sunday' WHEN '1' THEN 'Monday' WHEN '2' THEN 'Tuesday' WHEN '3' THEN 'Wednesday' WHEN '4' THEN 'Thursday' WHEN '5' THEN 'Friday' ELSE 'Saturday' END FROM orders WHERE 1 = 1 AND channel = 'online' AND order_date BETWEEN '2026-01-01' AND '2026-12-31' GROUP BY strftime('%w', order_date) ORDER BY COUNT(*) DESC, strftime('%w', order_date) LIMIT 1",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_busiest_weekday_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT CASE strftime('%w', order_date) WHEN '0' THEN 'Sunday' WHEN '1' THEN 'Monday' WHEN '2' THEN 'Tuesday' WHEN '3' THEN 'Wednesday' WHEN '4' THEN 'Thursday' WHEN '5' THEN 'Friday' ELSE 'Saturday' END FROM orders WHERE 1 = 1 AND channel = 'store' AND order_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY strftime('%w', order_date) ORDER BY COUNT(*) DESC, strftime('%w', order_date) LIMIT 1",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_rank_staff_orders_1",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name, COUNT(o.order_id) AS n, RANK() OVER (ORDER BY COUNT(o.order_id) DESC) FROM employees e JOIN orders o ON o.employee_id = e.employee_id WHERE e.role = 'barista' AND o.order_date BETWEEN '2025-01-01' AND '2025-12-31' GROUP BY e.employee_id ORDER BY n DESC, e.name",
+      "seconds": 0.0006
+    },
+    {
+      "id": "t3_rank_staff_orders_2",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name, COUNT(o.order_id) AS n, RANK() OVER (ORDER BY COUNT(o.order_id) DESC) FROM employees e JOIN orders o ON o.employee_id = e.employee_id WHERE e.role = 'barista' AND o.order_date BETWEEN '2026-01-01' AND '2026-06-30' GROUP BY e.employee_id ORDER BY n DESC, e.name",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_rank_staff_orders_3",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name, COUNT(o.order_id) AS n, RANK() OVER (ORDER BY COUNT(o.order_id) DESC) FROM employees e JOIN orders o ON o.employee_id = e.employee_id WHERE e.role = 'barista' AND o.order_date BETWEEN '2025-10-01' AND '2025-12-31' GROUP BY e.employee_id ORDER BY n DESC, e.name",
+      "seconds": 0.0005
+    },
+    {
+      "id": "t3_rank_staff_orders_4",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name, COUNT(o.order_id) AS n, RANK() OVER (ORDER BY COUNT(o.order_id) DESC) FROM employees e JOIN orders o ON o.employee_id = e.employee_id WHERE e.role = 'barista' AND o.order_date BETWEEN '2026-03-01' AND '2026-03-31' GROUP BY e.employee_id ORDER BY n DESC, e.name",
+      "seconds": 0.0004
+    },
+    {
+      "id": "t3_rank_staff_orders_5",
+      "split": "dev",
+      "tier": 3,
+      "correct": true,
+      "repairs": 0,
+      "error": null,
+      "sql": "SELECT e.name, COUNT(o.order_id) AS n, RANK() OVER (ORDER BY COUNT(o.order_id) DESC) FROM employees e JOIN orders o ON o.employee_id = e.employee_id WHERE e.role = 'barista' AND o.order_date BETWEEN '2025-01-01' AND '2025-03-31' GROUP BY e.employee_id ORDER BY n DESC, e.name",
+      "seconds": 0.0004
+    }
+  ]
+}

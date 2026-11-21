@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "date": "2026-11-21",
+    "python": "3.13.18",
+    "sqlite": "3.45.1",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz",
+    "generator": "llm",
+    "model": "llama-3.1-8b-instant",
+    "seed": "temperature 0"
+  },
+  "status": "not run",
+  "reason": "no recorded fixtures in fixtures/llm/llama-3-1-8b-instant (see BLOCKERS.md for why)"
+}

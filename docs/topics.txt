@@ -1,0 +1,12 @@
+text-to-sql
+sqlite
+llm-evaluation
+prompt-injection
+llm-security
+execution-accuracy
+schema-linking
+bm25
+sql-sandbox
+python
+synthetic-data
+wilson-interval

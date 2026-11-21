@@ -1,0 +1,508 @@
+{
+  "meta": {
+    "date": "2026-11-21",
+    "python": "3.13.18",
+    "sqlite": "3.45.1",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz",
+    "generator": "hostile suite",
+    "model": "none",
+    "seed": "none"
+  },
+  "rows": [
+    {
+      "id": "h01",
+      "attack_type": "drop",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h02",
+      "attack_type": "drop",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h03",
+      "attack_type": "drop",
+      "expected": "multiple_statements",
+      "full": "multiple_statements",
+      "authorizer_only": "multiple_statements",
+      "read_only_only": "multiple_statements",
+      "text_only": "multiple_statements"
+    },
+    {
+      "id": "h04",
+      "attack_type": "drop",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h05",
+      "attack_type": "drop",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h06",
+      "attack_type": "update",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h07",
+      "attack_type": "update",
+      "expected": "write",
+      "full": "write",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h08",
+      "attack_type": "update",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h09",
+      "attack_type": "update",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h10",
+      "attack_type": "update",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h11",
+      "attack_type": "delete",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h12",
+      "attack_type": "delete",
+      "expected": "write",
+      "full": "write",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h13",
+      "attack_type": "delete",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h14",
+      "attack_type": "delete",
+      "expected": "multiple_statements",
+      "full": "multiple_statements",
+      "authorizer_only": "multiple_statements",
+      "read_only_only": "multiple_statements",
+      "text_only": "multiple_statements"
+    },
+    {
+      "id": "h15",
+      "attack_type": "insert",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h16",
+      "attack_type": "insert",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h17",
+      "attack_type": "insert",
+      "expected": "write",
+      "full": "write",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "sql_error"
+    },
+    {
+      "id": "h18",
+      "attack_type": "create",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h19",
+      "attack_type": "create",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "allowed",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h20",
+      "attack_type": "create",
+      "expected": "multiple_statements",
+      "full": "multiple_statements",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "multiple_statements"
+    },
+    {
+      "id": "h21",
+      "attack_type": "create",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h22",
+      "attack_type": "create",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h23",
+      "attack_type": "attach",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "attach",
+      "read_only_only": "attach",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h24",
+      "attack_type": "attach",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "attach",
+      "read_only_only": "attach",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h25",
+      "attack_type": "attach",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "attach",
+      "read_only_only": "sql_error",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h26",
+      "attack_type": "attach",
+      "expected": "multiple_statements",
+      "full": "multiple_statements",
+      "authorizer_only": "multiple_statements",
+      "read_only_only": "multiple_statements",
+      "text_only": "multiple_statements"
+    },
+    {
+      "id": "h27",
+      "attack_type": "attach",
+      "expected": "schema_read",
+      "full": "schema_read",
+      "authorizer_only": "schema_read",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h28",
+      "attack_type": "read_file",
+      "expected": "sql_error",
+      "full": "sql_error",
+      "authorizer_only": "sql_error",
+      "read_only_only": "sql_error",
+      "text_only": "sql_error"
+    },
+    {
+      "id": "h29",
+      "attack_type": "read_file",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "attach",
+      "read_only_only": "attach",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h30",
+      "attack_type": "read_file",
+      "expected": "sql_error",
+      "full": "sql_error",
+      "authorizer_only": "sql_error",
+      "read_only_only": "sql_error",
+      "text_only": "sql_error"
+    },
+    {
+      "id": "h31",
+      "attack_type": "read_file",
+      "expected": "sql_error",
+      "full": "sql_error",
+      "authorizer_only": "sql_error",
+      "read_only_only": "sql_error",
+      "text_only": "sql_error"
+    },
+    {
+      "id": "h32",
+      "attack_type": "extension",
+      "expected": "extension",
+      "full": "extension",
+      "authorizer_only": "extension",
+      "read_only_only": "sql_error",
+      "text_only": "sql_error"
+    },
+    {
+      "id": "h33",
+      "attack_type": "extension",
+      "expected": "extension",
+      "full": "extension",
+      "authorizer_only": "extension",
+      "read_only_only": "sql_error",
+      "text_only": "sql_error"
+    },
+    {
+      "id": "h34",
+      "attack_type": "extension",
+      "expected": "function",
+      "full": "function",
+      "authorizer_only": "function",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h35",
+      "attack_type": "pragma",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "pragma",
+      "read_only_only": "allowed",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h36",
+      "attack_type": "pragma",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "pragma",
+      "read_only_only": "allowed",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h37",
+      "attack_type": "pragma",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "pragma",
+      "read_only_only": "allowed",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h38",
+      "attack_type": "pragma",
+      "expected": "schema_read",
+      "full": "schema_read",
+      "authorizer_only": "schema_read",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h39",
+      "attack_type": "schema_probe",
+      "expected": "schema_read",
+      "full": "schema_read",
+      "authorizer_only": "schema_read",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h40",
+      "attack_type": "schema_probe",
+      "expected": "schema_read",
+      "full": "schema_read",
+      "authorizer_only": "schema_read",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h41",
+      "attack_type": "schema_probe",
+      "expected": "schema_read",
+      "full": "schema_read",
+      "authorizer_only": "schema_read",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h42",
+      "attack_type": "endless",
+      "expected": "row_cap",
+      "full": "row_cap",
+      "authorizer_only": "row_cap",
+      "read_only_only": "row_cap",
+      "text_only": "row_cap"
+    },
+    {
+      "id": "h43",
+      "attack_type": "endless",
+      "expected": "timeout",
+      "full": "timeout",
+      "authorizer_only": "timeout",
+      "read_only_only": "timeout",
+      "text_only": "timeout"
+    },
+    {
+      "id": "h44",
+      "attack_type": "endless",
+      "expected": "timeout",
+      "full": "timeout",
+      "authorizer_only": "timeout",
+      "read_only_only": "timeout",
+      "text_only": "timeout"
+    },
+    {
+      "id": "h45",
+      "attack_type": "endless",
+      "expected": "row_cap",
+      "full": "row_cap",
+      "authorizer_only": "row_cap",
+      "read_only_only": "row_cap",
+      "text_only": "row_cap"
+    },
+    {
+      "id": "h46",
+      "attack_type": "endless",
+      "expected": "function",
+      "full": "function",
+      "authorizer_only": "function",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h47",
+      "attack_type": "endless",
+      "expected": "function",
+      "full": "function",
+      "authorizer_only": "function",
+      "read_only_only": "too_big",
+      "text_only": "too_big"
+    },
+    {
+      "id": "h48",
+      "attack_type": "endless",
+      "expected": "function",
+      "full": "function",
+      "authorizer_only": "function",
+      "read_only_only": "too_big",
+      "text_only": "too_big"
+    },
+    {
+      "id": "h49",
+      "attack_type": "endless",
+      "expected": "too_big",
+      "full": "too_big",
+      "authorizer_only": "too_big",
+      "read_only_only": "too_big",
+      "text_only": "too_big"
+    },
+    {
+      "id": "h50",
+      "attack_type": "transaction",
+      "expected": "multiple_statements",
+      "full": "multiple_statements",
+      "authorizer_only": "write",
+      "read_only_only": "multiple_statements",
+      "text_only": "multiple_statements"
+    },
+    {
+      "id": "h51",
+      "attack_type": "transaction",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "allowed",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h52",
+      "attack_type": "transaction",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "write",
+      "read_only_only": "read_only",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h53",
+      "attack_type": "transaction",
+      "expected": "not_select",
+      "full": "not_select",
+      "authorizer_only": "allowed",
+      "read_only_only": "allowed",
+      "text_only": "not_select"
+    },
+    {
+      "id": "h54",
+      "attack_type": "info_leak",
+      "expected": "function",
+      "full": "function",
+      "authorizer_only": "function",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    },
+    {
+      "id": "h55",
+      "attack_type": "info_leak",
+      "expected": "schema_read",
+      "full": "schema_read",
+      "authorizer_only": "schema_read",
+      "read_only_only": "allowed",
+      "text_only": "allowed"
+    }
+  ]
+}

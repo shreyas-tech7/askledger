@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>askledger results</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:system-ui,sans-serif;max-width:60rem;margin:2rem auto;padding:0 1rem;
+color:#1b1f24;background:#fff}table{border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+td,th{border:1px solid #ccd;padding:.3rem .5rem;text-align:left}th{background:#eef}
+@media (prefers-color-scheme: dark){body{color:#e6e6e6;background:#16181c}
+th{background:#262a33}td,th{border-color:#444}}
+</style></head><body>
+<h1>askledger results</h1>
+<p>Measured on 2026-11-21 with Python 3.13.18, SQLite 3.45.1, on Intel(R) Xeon(R) Processor @ 2.30GHz. Simulated-fault seeds: 1, 2. LLM status: not run.
+</p>
+<h2>Execution accuracy by tier (95% Wilson intervals)</h2>
+<table>
+<tr><th>generator</th><th>split</th><th>tier 1</th><th>tier 2</th><th>tier 3</th><th>all</th></tr>
+<tr><td>template baseline</td><td>dev (140)</td><td>50/50 = 100% [93%, 100%]</td><td>44/45 = 98% [88%, 100%]</td><td>45/45 = 100% [92%, 100%]</td><td>139/140 = 99% [96%, 100%]</td></tr>
+<tr><td>template baseline</td><td>held-out (70)</td><td>5/20 = 25% [11%, 47%]</td><td>10/25 = 40% [23%, 59%]</td><td>0/25 = 0% [0%, 13%]</td><td>15/70 = 21% [13%, 32%]</td></tr>
+<tr><td>LLM <code>llama-3.1-8b-instant</code></td><td>dev (140)</td><td>not run</td><td>not run</td><td>not run</td><td>not run</td></tr>
+<tr><td>LLM <code>llama-3.1-8b-instant</code></td><td>held-out (70)</td><td>not run</td><td>not run</td><td>not run</td><td>not run</td></tr>
+</table>
+<h2>Repair budget</h2>
+<table>
+<tr><th>run</th><th>max repairs</th><th>correct</th><th>repairs used</th><th>valid SQL, wrong answer</th></tr>
+<tr><td>template baseline, all 210</td><td>0</td><td>139/140 = 99% [96%, 100%] dev, 15/70 = 21% [13%, 32%] held-out</td><td>0</td><td>0</td></tr>
+<tr><td>template baseline, all 210</td><td>1</td><td>139/140 = 99% [96%, 100%] dev, 15/70 = 21% [13%, 32%] held-out</td><td>0</td><td>0</td></tr>
+<tr><td>template baseline, all 210</td><td>2</td><td>139/140 = 99% [96%, 100%] dev, 15/70 = 21% [13%, 32%] held-out</td><td>0</td><td>0</td></tr>
+<tr><td>simulated faults, seed 1</td><td>0</td><td>0/200 = 0% [0%, 2%]</td><td></td><td>0</td></tr>
+<tr><td>simulated faults, seed 1</td><td>1</td><td>90/200 = 45% [38%, 52%]</td><td></td><td>22</td></tr>
+<tr><td>simulated faults, seed 1</td><td>2</td><td>123/200 = 62% [55%, 68%]</td><td></td><td>48</td></tr>
+<tr><td>simulated faults, seed 2</td><td>0</td><td>0/200 = 0% [0%, 2%]</td><td></td><td>0</td></tr>
+<tr><td>simulated faults, seed 2</td><td>1</td><td>74/200 = 37% [31%, 44%]</td><td></td><td>21</td></tr>
+<tr><td>simulated faults, seed 2</td><td>2</td><td>122/200 = 61% [54%, 67%]</td><td></td><td>44</td></tr>
+</table>
+<h2>Hostile suite by attack type</h2>
+<table>
+<tr><th>attack type</th><th>questions</th><th>stopped as expected</th><th>outcome</th></tr>
+<tr><td>attach</td><td>5</td><td>5/5</td><td>multiple_statements, not_select, schema_read</td></tr>
+<tr><td>create</td><td>5</td><td>5/5</td><td>multiple_statements, not_select</td></tr>
+<tr><td>delete</td><td>4</td><td>4/4</td><td>multiple_statements, not_select, write</td></tr>
+<tr><td>drop</td><td>5</td><td>5/5</td><td>multiple_statements, not_select</td></tr>
+<tr><td>endless</td><td>8</td><td>8/8</td><td>function, row_cap, timeout, too_big</td></tr>
+<tr><td>extension</td><td>3</td><td>3/3</td><td>extension, function</td></tr>
+<tr><td>info_leak</td><td>2</td><td>2/2</td><td>function, schema_read</td></tr>
+<tr><td>insert</td><td>3</td><td>3/3</td><td>not_select, write</td></tr>
+<tr><td>pragma</td><td>4</td><td>4/4</td><td>not_select, schema_read</td></tr>
+<tr><td>read_file</td><td>4</td><td>4/4</td><td>not_select, sql_error</td></tr>
+<tr><td>schema_probe</td><td>3</td><td>3/3</td><td>schema_read</td></tr>
+<tr><td>transaction</td><td>4</td><td>4/4</td><td>multiple_statements, not_select</td></tr>
+<tr><td>update</td><td>5</td><td>5/5</td><td>not_select, write</td></tr>
+<tr><td><strong>all</strong></td><td>55</td><td>55/55</td><td>3 stopped by a SQLite error, not by the layer</td></tr>
+</table>
+<h2>Each layer alone</h2>
+<table>
+<tr><th>layers on</th><th>attacks stopped</th><th>write attacks stopped (drop, update, delete, insert, create)</th></tr>
+<tr><td><code>full</code></td><td>55/55</td><td>22/22</td></tr>
+<tr><td><code>authorizer_only</code></td><td>54/55</td><td>22/22</td></tr>
+<tr><td><code>read_only_only</code></td><td>40/55</td><td>21/22</td></tr>
+<tr><td><code>text_only</code></td><td>44/55</td><td>20/22</td></tr>
+</table>
+<p>Written by <code>askledger readme</code> from <code>results/*.json</code>.</p>
+</body></html>
