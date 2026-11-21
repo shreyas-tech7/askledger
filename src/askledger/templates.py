@@ -18,6 +18,7 @@ MONTHS = ["january", "february", "march", "april", "may", "june", "july", "augus
           "september", "october", "november", "december"]  # fmt: skip
 ORDINAL = {"first": 1, "second": 2, "third": 3, "fourth": 4}
 LINE = "oi.quantity * oi.unit_price * (1 - COALESCE(oi.discount, 0))"
+SAFE_VALUE = re.compile(r"[A-Za-z0-9 &.-]+")
 COUNT = r"\b(how many|count|number of|order count)\b"
 
 
@@ -26,7 +27,9 @@ def vocab() -> dict[str, list[str]]:
     con = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True)
 
     def col(sql):
-        return sorted({r[0] for r in con.execute(sql) if r[0]}, key=len, reverse=True)
+        # Only plain values can reach the SQL text, so no quote can ever break out.
+        values = {r[0] for r in con.execute(sql) if r[0] and SAFE_VALUE.fullmatch(r[0])}
+        return sorted(values, key=len, reverse=True)
 
     v = {
         "city": col("SELECT city FROM customers"),

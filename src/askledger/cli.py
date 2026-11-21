@@ -1,12 +1,15 @@
-"""Command line: askledger ask | sql | eval | hostile | readme | demo."""
+"""Command line: askledger ask | sql | eval | record | hostile | readme | demo."""
 
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 
 from askledger import hostile, pipeline, report, safety
 from askledger.templates import TemplateGenerator
+
+DEFAULT_MODEL = os.environ.get("ASKLEDGER_LLM_MODEL", "llama-3.1-8b-instant")
 
 DEMO_QUESTIONS = [
     "How many customers live in Ashford?",
@@ -66,6 +69,23 @@ def cmd_eval(args) -> int:
     return 0
 
 
+def cmd_record(args) -> int:
+    """Call a real model once per question and attempt, saving fixtures for replay."""
+
+    from askledger import questions
+    from askledger.llm import LLMGenerator
+
+    if not os.environ.get("ASKLEDGER_LLM_BASE_URL"):
+        print("set ASKLEDGER_LLM_BASE_URL and a key first (see .env.example)")
+        return 2
+    for q in questions.load():
+        gen = LLMGenerator(args.model, mode="record")
+        a = pipeline.answer(q.question, gen, max_repairs=2, question_id=q.id)
+        print(f"{q.id} {'ok' if a.ok else 'not answered'}")
+    print("now run `askledger eval` and `askledger readme`")
+    return 0
+
+
 def cmd_hostile(args) -> int:
     attacks = hostile.load()
     bad = 0
@@ -120,20 +140,22 @@ def main(argv: list[str] | None = None) -> int:
     ask = sub.add_parser("ask", help="answer one question")
     ask.add_argument("question")
     ask.add_argument("--generator", choices=["template", "llm"], default="template")
-    ask.add_argument("--model", default="llama-3.1-8b-instant")
+    ask.add_argument("--model", default=DEFAULT_MODEL)
     ask.add_argument("--mode", choices=["replay", "record"], default="replay")
     ask.add_argument("--max-repairs", type=int, default=2)
     ev = sub.add_parser("eval", help="run every setting and write results/*.json")
-    ev.add_argument("--model", default="llama-3.1-8b-instant")
+    ev.add_argument("--model", default=DEFAULT_MODEL)
     raw = sub.add_parser("sql", help="run raw SQL through the safety layer")
     raw.add_argument("sql")
+    rec = sub.add_parser("record", help="record a real model's answers as fixtures (network)")
+    rec.add_argument("--model", default=DEFAULT_MODEL)
     sub.add_parser("hostile", help="run the hostile suite through the safety layer")
     rd = sub.add_parser("readme", help="write README tables and docs/index.html from results")
     rd.add_argument("--check", action="store_true", help="fail if they are out of date")
     sub.add_parser("demo", help="answer a few questions, one of them hostile")
     args = p.parse_args(argv)
     handler = {"ask": cmd_ask, "eval": cmd_eval, "hostile": cmd_hostile, "readme": cmd_readme,
-               "demo": cmd_demo, "sql": cmd_sql}[args.cmd]  # fmt: skip
+               "demo": cmd_demo, "sql": cmd_sql, "record": cmd_record}[args.cmd]  # fmt: skip
     return handler(args)
 
 

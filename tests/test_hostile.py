@@ -38,9 +38,7 @@ def test_public_run_blocks_every_hostile_query():
 def test_layer_matrix_full_stack_blocks_all_and_layers_overlap():
     rows = hostile.layer_matrix(time_limit_s=0.3)
     assert all(r["full"] != "allowed" for r in rows)
-    writes = [
-        r for r in rows if r["attack_type"] in ("drop", "update", "delete", "insert", "create")
-    ]
+    writes = [r for r in rows if r["attack_type"] in hostile.WRITE_TYPES]
     assert all(r["authorizer_only"] != "allowed" for r in writes)
     # Pinned finding: the read-only URI alone still lets CREATE TEMP TABLE run, because the
     # temp schema lives in memory. The authorizer is what stops it.

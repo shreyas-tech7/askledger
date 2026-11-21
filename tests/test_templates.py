@@ -35,3 +35,12 @@ def test_template_dev_accuracy_is_high_and_heldout_is_lower():
     held = [evaluate.correct(gen.generate(q.question, []), q) for q in questions.load("heldout")]
     assert sum(dev) / len(dev) > 0.9
     assert sum(held) / len(held) < sum(dev) / len(dev)
+
+
+def test_slot_values_can_never_carry_a_quote():
+    from askledger.templates import SAFE_VALUE, vocab
+
+    for values in vocab().values():
+        assert values, "every slot has values"
+        for v in values:
+            assert SAFE_VALUE.fullmatch(v) and "'" not in v

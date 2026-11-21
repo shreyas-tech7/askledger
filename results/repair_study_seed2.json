@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "date": "2026-11-21",
+    "python": "3.13.18",
+    "sqlite": "3.45.1",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz",
+    "generator": "simulated faults + error-guided fixer",
+    "model": "none",
+    "seed": 2
+  },
+  "cases": 200,
+  "by_repairs": {
+    "0": {
+      "correct": 0,
+      "n": 200,
+      "accuracy": 0.0,
+      "ci95": [
+        0.0,
+        0.018846005918320894
+      ],
+      "valid_but_wrong": 0
+    },
+    "1": {
+      "correct": 74,
+      "n": 200,
+      "accuracy": 0.37,
+      "ci95": [
+        0.3061249750375241,
+        0.43877498650123936
+      ],
+      "valid_but_wrong": 21
+    },
+    "2": {
+      "correct": 122,
+      "n": 200,
+      "accuracy": 0.61,
+      "ci95": [
+        0.5409361758928832,
+        0.6749177028050861
+      ],
+      "valid_but_wrong": 44
+    }
+  }
+}

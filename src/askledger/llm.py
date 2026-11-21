@@ -90,8 +90,8 @@ class LLMGenerator:
         return extract_sql(text)
 
     def _call(self, messages) -> str:
-        if not self.base_url:
-            raise RuntimeError("set ASKLEDGER_LLM_BASE_URL for record mode")
+        if not self.base_url.startswith(("https://", "http://")):
+            raise RuntimeError("set ASKLEDGER_LLM_BASE_URL to an http(s) URL for record mode")
         key = next((os.environ[k] for k in KEY_VARS if os.environ.get(k)), None)
         headers = {"Content-Type": "application/json"}
         if key:
@@ -99,7 +99,8 @@ class LLMGenerator:
         body = json.dumps({"model": self.model, "messages": messages, "temperature": 0}).encode()
         wait = 2.0
         for _ in range(5):
-            req = urllib.request.Request(f"{self.base_url}/chat/completions", body, headers)
+            url = f"{self.base_url}/chat/completions"
+            req = urllib.request.Request(url, body, headers)  # noqa: S310 (scheme checked above)
             try:
                 with urllib.request.urlopen(req, timeout=self.timeout_s) as resp:  # noqa: S310
                     return json.loads(resp.read())["choices"][0]["message"]["content"]

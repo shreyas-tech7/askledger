@@ -30,5 +30,13 @@ line-length = 100
 target-version = "py311"
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "B", "UP"]
-ignore = ["E501"]
+select = ["E", "F", "I", "B", "UP", "S"]
+# S311: the random module only seeds synthetic data and test faults, never secrets.
+ignore = ["E501", "S311"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S105", "S106", "S603", "S608"]
+# Templates fill SQL with values read from the database that match SAFE_VALUE, and with
+# fixed words and computed dates. tests/test_templates.py checks every value.
+"src/askledger/templates.py" = ["S608"]
+"scripts/*" = ["S608"]

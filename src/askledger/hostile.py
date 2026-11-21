@@ -13,6 +13,8 @@ from askledger.db import DB_PATH
 
 HOSTILE_PATH = Path(__file__).parent / "data" / "hostile.jsonl"
 
+WRITE_TYPES = ("drop", "update", "delete", "insert", "create")
+
 # Single layers for the defense-in-depth table. The time and row limits stay on in every
 # setting, so a test run cannot hang.
 LAYERS = {

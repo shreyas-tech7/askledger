@@ -25,3 +25,9 @@ def test_hostile_command_blocks_everything(capsys):
 def test_demo_runs(capsys):
     assert cli.main(["demo"]) == 0
     assert capsys.readouterr().out.count("BLOCKED") == len(cli.DEMO_SQL)
+
+
+def test_record_refuses_without_a_provider(capsys, monkeypatch):
+    monkeypatch.delenv("ASKLEDGER_LLM_BASE_URL", raising=False)
+    assert cli.main(["record"]) == 2
+    assert "ASKLEDGER_LLM_BASE_URL" in capsys.readouterr().out
