@@ -1,5 +1,6 @@
 import shutil
 import sqlite3
+import time
 
 import pytest
 
@@ -138,8 +139,11 @@ def test_tables_read_are_recorded():
     assert r.tables_read == {"orders", "customers"}
 
 
-def test_database_file_is_unchanged_by_the_suite():
-    assert db.content_hash(db.DB_PATH) == db.content_hash(db.DB_PATH)
+def test_database_file_is_unchanged_by_the_suite(tmp_path):
+    # The committed database must equal a fresh build. If any test or attack had written
+    # to it, the hashes would differ.
+    fresh = db.build(tmp_path / "fresh.db", db.SEED)
+    assert db.content_hash(db.DB_PATH) == db.content_hash(fresh or tmp_path / "fresh.db")
 
 
 def test_authorizer_denies_file_functions_even_if_this_sqlite_had_them():
@@ -150,3 +154,47 @@ def test_authorizer_denies_file_functions_even_if_this_sqlite_had_them():
         assert (
             guard.authorize(sqlite3.SQLITE_FUNCTION, None, name, None, None) == sqlite3.SQLITE_DENY
         )
+
+
+def test_a_long_glob_pattern_is_refused_before_it_can_run_for_seconds():
+    """Found in review: the progress handler cannot interrupt one long GLOB call."""
+    big = "replace(replace(hex(zeroblob(1000)), '0', 'aa'), 'a', 'aaaa')"
+    sql = f"SELECT 'x' GLOB ('*' || substr({big}, 1, 3000) || 'b*')"
+    with pytest.raises((safety.Blocked, safety.SQLError)):
+        safety.run(sql)
+    pattern = "'*" + "[^b]" * 300 + "b*'"
+    sql = f"SELECT name FROM customers WHERE name GLOB {pattern}"
+    start = time.monotonic()
+    with pytest.raises((safety.Blocked, safety.SQLError)):
+        safety.run(sql)
+    assert time.monotonic() - start < 1.0
+
+
+def test_result_byte_cap_stops_a_huge_result(monkeypatch):
+    """Found in review: a few rows of huge strings got past the row cap."""
+    monkeypatch.setattr(safety, "MAX_RESULT_BYTES", 1000)
+    with pytest.raises(safety.Blocked, match="too_big"):
+        safety.run("SELECT name, city, email FROM customers")
+    assert safety.run("SELECT name FROM customers LIMIT 5").rows
+
+
+def test_text_check_reads_strings_and_comments_in_one_pass():
+    with pytest.raises(safety.Blocked, match="multiple_statements"):
+        safety.text_check("SELECT '--'; DELETE FROM customers")
+    safety.text_check("SELECT ';' -- a comment with ; inside")
+    safety.text_check("SELECT 1 /* it's fine; really */")
+
+
+@pytest.mark.parametrize(
+    "sql, reason",
+    [
+        ("SELECT * FROM pragma_table_info('customers')", "schema_read"),
+        ("SELECT sql FROM sqlite_master", "schema_read"),
+        ("PRAGMA user_version = 5", "pragma"),
+        ("SELECT load_extension('x')", "extension"),
+    ],
+)
+def test_authorizer_alone_denies_schema_pragma_and_extensions(writable, sql, reason):
+    with pytest.raises(safety.Blocked) as e:
+        safety.run_layers(sql, writable, text=False, readonly=False, authorizer=True)
+    assert e.value.reason == reason

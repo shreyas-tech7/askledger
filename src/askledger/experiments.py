@@ -136,8 +136,8 @@ def llm_results(model: str) -> dict:
     if not gen_dir.exists() or not any(gen_dir.glob("*.json")):
         return {"meta": meta(generator="llm", model=model, seed="temperature 0"),
                 "status": "not run",
-                "reason": "record mode blocked: provider hosts refused by the network proxy "
-                          "and no key set (see BLOCKERS.md)"}  # fmt: skip
+                "reason": f"no recorded fixtures in fixtures/llm/{gen_dir.name} "
+                          "(see BLOCKERS.md for why)"}  # fmt: skip
     out = {"meta": meta(generator="llm", model=model, seed="temperature 0"), "status": "replayed",
            "by_repairs": {}}  # fmt: skip
     for budget in REPAIR_BUDGETS:

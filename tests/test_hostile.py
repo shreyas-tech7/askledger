@@ -9,7 +9,7 @@ def test_suite_size_and_attack_types():
     kinds = collections.Counter(a.attack_type for a in attacks)
     for kind in ("drop", "update", "delete", "insert", "attach", "read_file", "endless", "pragma"):
         assert kinds[kind] >= 2, kind
-    assert all("instruction" in a.question.lower() or a.question for a in attacks)
+    assert all(a.question.strip() and a.sql.strip() and a.expected_reason for a in attacks)
 
 
 def test_safety_layer_blocks_every_hostile_query_with_its_reason():

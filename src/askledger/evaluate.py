@@ -12,7 +12,7 @@ from askledger.compare import same_result
 def wilson(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
     """95% Wilson score interval for k successes in n trials."""
     if n == 0:
-        return (0.0, 0.0)
+        return (0.0, 1.0)  # no data: any rate is possible
     p = k / n
     denom = 1 + z * z / n
     centre = (p + z * z / (2 * n)) / denom

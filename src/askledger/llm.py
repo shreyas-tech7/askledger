@@ -29,6 +29,16 @@ SYSTEM = (
 )
 
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """urllib would resend the Authorization header to wherever a redirect points."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise urllib.error.HTTPError(newurl, code, "redirect refused", headers, fp)
+
+
+_OPENER = urllib.request.build_opener(_NoRedirect)
+
+
 def prompt(question: str, tables: list[str], sql: str | None = None, error: str | None = None):
     user = f"Schema:\n{schema.prompt_schema(tables)}\n\nQuestion: {question}"
     messages = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}]
@@ -90,8 +100,9 @@ class LLMGenerator:
         return extract_sql(text)
 
     def _call(self, messages) -> str:
-        if not self.base_url.startswith(("https://", "http://")):
-            raise RuntimeError("set ASKLEDGER_LLM_BASE_URL to an http(s) URL for record mode")
+        local = self.base_url.startswith(("http://127.0.0.1", "http://localhost"))
+        if not (self.base_url.startswith("https://") or local):
+            raise RuntimeError("set ASKLEDGER_LLM_BASE_URL to an https URL for record mode")
         key = next((os.environ[k] for k in KEY_VARS if os.environ.get(k)), None)
         headers = {"Content-Type": "application/json"}
         if key:
@@ -102,7 +113,7 @@ class LLMGenerator:
             url = f"{self.base_url}/chat/completions"
             req = urllib.request.Request(url, body, headers)  # noqa: S310 (scheme checked above)
             try:
-                with urllib.request.urlopen(req, timeout=self.timeout_s) as resp:  # noqa: S310
+                with _OPENER.open(req, timeout=self.timeout_s) as resp:
                     return json.loads(resp.read())["choices"][0]["message"]["content"]
             except urllib.error.HTTPError as e:
                 if e.code != 429:

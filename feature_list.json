@@ -194,6 +194,6 @@
       "cat docs/RELEASE_CHECK.md",
       "cat docs/HUMAN_STEPS.md"
     ],
-    "passes": false
+    "passes": true
   }
 ]

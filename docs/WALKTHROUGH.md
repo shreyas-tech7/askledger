@@ -27,8 +27,8 @@ A guided read of the code in the order a question travels. Each step names the f
 - `text_check()` refuses more than one statement, anything over the length limit and anything that does not start with SELECT or WITH.
 - `_connect()` opens a `file:<path>?mode=ro` URI, turns extension loading off, sets SQLite limits and installs `_Guard.authorize` and `_Guard.progress`.
 - `_Guard.authorize()` is called by SQLite for every action a statement will take. It returns OK only for SELECT, recursive CTEs, reads of the eight ledger tables and functions on `ALLOWED_FUNCTIONS`. Everything else is denied with a reason.
-- `_Guard.progress()` interrupts a query that runs past the time limit.
-- `_execute()` fetches at most one row past the cap and maps each SQLite error to a `Blocked` reason or an `SQLError`.
+- `_Guard.progress()` interrupts a query that runs past the time limit. It runs between SQLite steps, so it cannot stop one long GLOB call. That is why `_connect()` also caps LIKE and GLOB patterns at `MAX_PATTERN` characters.
+- `_execute()` fetches one row at a time, stops at one row past the cap or past `MAX_RESULT_BYTES`, and maps each SQLite error to a `Blocked` reason or an `SQLError`.
 - `run()` turns every layer on. `run_layers()` exists only so tests and the layer table can turn layers off.
 
 ## 6. The pipeline and repair

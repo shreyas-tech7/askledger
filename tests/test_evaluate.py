@@ -10,7 +10,7 @@ def test_wilson_matches_known_values():
     assert hi == pytest.approx(0.9433, abs=1e-4)
     assert evaluate.wilson(0, 10)[0] == 0.0
     assert evaluate.wilson(10, 10)[1] == pytest.approx(1.0)
-    assert evaluate.wilson(0, 0) == (0.0, 0.0)
+    assert evaluate.wilson(0, 0) == (0.0, 1.0)
 
 
 def test_gold_sql_scores_itself_correct():

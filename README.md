@@ -41,7 +41,7 @@ flowchart LR
 | text checks | one statement only, a length limit, must start with SELECT or WITH | a write inside a CTE, any function |
 | read-only connection | opens the file with a `file:<path>?mode=ro` URI | `CREATE TEMP TABLE`, `SAVEPOINT`, schema and pragma reads |
 | `set_authorizer` | denies every action except SELECT, reads of the ledger tables and an allowlist of functions. ATTACH, PRAGMA, writes and `load_extension` are denied | nothing in the suite that writes |
-| limits | a time limit through `set_progress_handler`, a row cap, no attached databases, a string length limit | not a security boundary on its own |
+| limits | a time limit through `set_progress_handler`, a row cap, a byte cap on the result, no attached databases, short string and LIKE/GLOB pattern limits | not a security boundary on its own |
 
 What it does not stop: a legal read can still return every customer row, with names and emails. Here the data is synthetic, so that is fine. A real deployment would also need row level rules and a column allowlist per user.
 

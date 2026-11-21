@@ -9,5 +9,5 @@
     "seed": "temperature 0"
   },
   "status": "not run",
-  "reason": "record mode blocked: provider hosts refused by the network proxy and no key set (see BLOCKERS.md)"
+  "reason": "no recorded fixtures in fixtures/llm/llama-3-1-8b-instant (see BLOCKERS.md for why)"
 }

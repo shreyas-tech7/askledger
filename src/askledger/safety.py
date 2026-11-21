@@ -7,8 +7,10 @@ Four layers, each enforced by SQLite or by plain code, never by the model:
 3. ``set_authorizer``: every action is denied except SELECT, reads of the ledger tables,
    recursive CTEs and functions on an allowlist. ATTACH, DETACH, PRAGMA, every write and
    every function off the list (load_extension, randomblob, printf...) is denied.
-4. Limits: a time limit through ``set_progress_handler``, a row cap on the fetch, and
-   SQLite limits on attached databases and on string length.
+4. Limits: a time limit through ``set_progress_handler``, a row cap and a byte cap on the
+   fetch, and SQLite limits on attached databases, string length and LIKE/GLOB patterns.
+   The pattern limit matters because the progress handler cannot interrupt one long
+   GLOB call, so short patterns keep every single call fast.
 
 What it does not stop: a legal read can still return every customer row. The data is
 synthetic, so that is fine here. A real deployment would also need row-level rules.
@@ -27,7 +29,9 @@ from askledger.db import DB_PATH, TABLES
 MAX_SQL_CHARS = 5000
 MAX_ROWS = 1000
 TIME_LIMIT_S = 2.0
-MAX_STRING = 1_000_000
+MAX_STRING = 65_536
+MAX_RESULT_BYTES = 2_000_000
+MAX_PATTERN = 200  # LIKE and GLOB pattern length. A long pattern can run for seconds in one call
 
 ALLOWED_FUNCTIONS = frozenset(
     """
@@ -55,8 +59,8 @@ WRITE_ACTIONS = {
     )
 }
 
-COMMENT = re.compile(r"--[^\n]*|/\*.*?\*/", re.S)
-LITERAL = re.compile(r"'(?:[^']|'')*'")
+# One pass, left to right, so a quote inside a comment and "--" inside a string both read right.
+TOKEN = re.compile(r"'(?:[^']|'')*'|--[^\n]*|/\*.*?(?:\*/|$)", re.S)
 
 
 class Blocked(Exception):
@@ -84,8 +88,9 @@ def text_check(sql: str) -> None:
     """Layer 1. Cheap checks on the text. The other layers do not depend on these."""
     if len(sql) > MAX_SQL_CHARS:
         raise Blocked("too_long", f"{len(sql)} characters")
-    body = COMMENT.sub(" ", sql).strip().lstrip("(").lstrip()
-    if LITERAL.sub("''", body).rstrip().rstrip(";").count(";"):
+    body = TOKEN.sub(lambda m: "''" if m.group(0).startswith("'") else " ", sql)
+    body = body.strip().lstrip("(").lstrip()
+    if body.rstrip().rstrip(";").count(";"):
         raise Blocked("multiple_statements")
     first = body.split(None, 1)[0].upper() if body else ""
     if first not in ("SELECT", "WITH"):
@@ -144,6 +149,7 @@ def _connect(path: Path, *, readonly: bool = True, authorizer: bool = True):
     con.setlimit(sqlite3.SQLITE_LIMIT_ATTACHED, 0)
     con.setlimit(sqlite3.SQLITE_LIMIT_LENGTH, MAX_STRING)
     con.setlimit(sqlite3.SQLITE_LIMIT_SQL_LENGTH, MAX_SQL_CHARS + 100)
+    con.setlimit(sqlite3.SQLITE_LIMIT_LIKE_PATTERN_LENGTH, MAX_PATTERN)
     if hasattr(con, "setconfig"):  # Python 3.12+: refuse writes to the schema
         con.setconfig(sqlite3.SQLITE_DBCONFIG_DEFENSIVE, True)
         con.setconfig(sqlite3.SQLITE_DBCONFIG_TRUSTED_SCHEMA, False)
@@ -161,7 +167,15 @@ def _execute(con, guard, sql, max_rows, time_limit_s) -> Result:
     guard.read.clear()
     try:
         cur = con.execute(sql)
-        rows = cur.fetchmany(max_rows + 1)
+        rows, size = [], 0
+        for row in cur:  # one row at a time, so a huge result stops early
+            rows.append(row)
+            size += sum(len(v) if isinstance(v, str | bytes) else 8 for v in row)
+            if size > MAX_RESULT_BYTES:
+                cur.close()
+                raise Blocked("too_big", f"result over {MAX_RESULT_BYTES} bytes")
+            if len(rows) > max_rows:
+                break
     except sqlite3.ProgrammingError as e:
         if "one statement" in str(e):
             raise Blocked("multiple_statements") from e
@@ -177,7 +191,7 @@ def _execute(con, guard, sql, max_rows, time_limit_s) -> Result:
             raise Blocked("read_only", msg) from e
         if "too many attached" in msg:
             raise Blocked("attach", msg) from e
-        if "too big" in msg:
+        if "too big" in msg or "pattern too complex" in msg:
             raise Blocked("too_big", msg) from e
         raise SQLError(msg) from e
     if len(rows) > max_rows:
