@@ -140,7 +140,9 @@
     "area": "eval",
     "description": "Recorded free-model run on dev and held-out splits (record mode)",
     "steps": [
-      ".venv/bin/askledger eval --generator llm --mode replay"
+      ".venv/bin/askledger record",
+      ".venv/bin/askledger eval",
+      ".venv/bin/askledger readme --check"
     ],
     "passes": false
   },
@@ -153,7 +155,7 @@
       ".venv/bin/askledger readme --check",
       ".venv/bin/pytest tests/test_readme.py"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F18",
@@ -163,7 +165,7 @@
       ".venv/bin/pytest tests/test_repo.py",
       "~/go/bin/actionlint"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F19",
@@ -173,7 +175,7 @@
       ".venv/bin/python scripts/make_social_preview.py",
       ".venv/bin/python scripts/check_links.py"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F20",
@@ -182,7 +184,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_repo.py -k study"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F21",

@@ -1,13 +1,14 @@
 # Progress
 
 ## Done
-- Initializer files, database generator (F03), frozen question set (F04, F05).
+- F01 to F15: setup, network guard, database, frozen questions, gold determinism, comparison, eval harness, safety layer, authorizer alone, hostile suite, linking, templates, LLM record and replay, repair loop, pipeline and CLI.
+- F17 to F20: README tables by script, repo files and CI, social preview, static page, demo, study kit.
+
+## In progress
+- F21: release check and hand-off.
+
+## Blocked
+- F16: real model run. Provider hosts refused by the proxy and no key. See BLOCKERS.md.
 
 ## Next
-- F06 comparison rules, F07 eval harness, F08 to F10 safety layer and hostile suite.
-
-## Open blockers
-- Record mode hosts refused by the proxy, no key. Skill installs denied. See BLOCKERS.md.
-
-## Last ./init.sh
-2026-11-21: 10 passed.
+- Finish docs/RELEASE_CHECK.md, write the release SHA into CHANGELOG.md and docs/HUMAN_STEPS.md, push, bundle, report.
