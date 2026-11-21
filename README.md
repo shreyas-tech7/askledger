@@ -70,7 +70,7 @@ Each cell is correct over total, the rate, and the 95% Wilson interval. Tier 1 i
 
 ### Repair budget
 
-The template baseline never writes SQL that errors, so repairs change nothing for it. To measure the repair loop anyway, the simulated-fault study takes each gold query, swaps one or two real names for plausible wrong ones (`qty` for `quantity`, `order_lines` for `order_items`), and lets the error-guided fixer repair it. The last column counts repairs that produced valid SQL with the wrong answer, which is how repair hurts.
+The template baseline never writes SQL that errors, so repairs change nothing for it. To measure the repair loop anyway, the simulated-fault study takes each gold query that uses a name on its list, swaps one or two real names for plausible wrong ones (`qty` for `quantity`, `order_lines` for `order_items`), and lets the error-guided fixer repair it. The last column counts repairs that produced valid SQL with the wrong answer, which is how repair hurts.
 
 <!-- askledger:repairs:start -->
 | run | max repairs | correct | repairs used | valid SQL, wrong answer |
@@ -102,7 +102,7 @@ Share of questions where every table the gold query uses is in the top k linked 
 Each attack is stored as data with the block reason it must get (`src/askledger/data/hostile.jsonl`). The test feeds the hostile SQL straight to the safety layer, with no model in the way, and checks the database file hash is unchanged afterwards.
 
 <!-- askledger:attacks:start -->
-| attack type | questions | blocked as expected | block reasons |
+| attack type | questions | stopped as expected | outcome |
 |---|---|---|---|
 | attach | 5 | 5/5 | multiple_statements, not_select, schema_read |
 | create | 5 | 5/5 | multiple_statements, not_select |
@@ -117,7 +117,7 @@ Each attack is stored as data with the block reason it must get (`src/askledger/
 | schema_probe | 3 | 3/3 | schema_read |
 | transaction | 4 | 4/4 | multiple_statements, not_select |
 | update | 5 | 5/5 | not_select, write |
-| **all** | 55 | 55/55 |  |
+| **all** | 55 | 55/55 | 3 stopped by a SQLite error, not by the layer |
 <!-- askledger:attacks:end -->
 
 Each layer alone, on throwaway copies of the database:
@@ -159,7 +159,7 @@ cd askledger
 
 To record a real model, set `ASKLEDGER_LLM_BASE_URL`, `ASKLEDGER_LLM_MODEL` and a key (`GROQ_API_KEY` or `ASKLEDGER_LLM_API_KEY`) as in `.env.example`, then run `askledger record --model <name>`. It asks the model once per question and repair attempt. Fixtures land in `fixtures/llm/<model>/`. After that, `askledger eval` replays them with no network. The key is read from the environment and never written to a fixture or a log.
 
-A transcript of a real run is in [docs/DEMO.md](docs/DEMO.md). The results page [docs/index.html](docs/index.html) opens from disk.
+A transcript of a real terminal session with the template baseline is in [docs/DEMO.md](docs/DEMO.md). The results page [docs/index.html](docs/index.html) opens from disk.
 
 ## Limits
 
@@ -167,9 +167,10 @@ A transcript of a real run is in [docs/DEMO.md](docs/DEMO.md). The results page 
 - The template baseline is close to perfect on dev and much worse on held-out. That gap is the point of the split, not a bug.
 - No LLM row is measured yet. Record mode was blocked on the build machine (see [BLOCKERS.md](BLOCKERS.md)).
 - The simulated-fault study uses a rule based fixer and invented mistakes. A model makes other mistakes, and its repair step can also change the meaning on purpose.
-- The text check refuses any semicolon outside a string literal, even a harmless trailing one inside a comment.
+- The text check strips comments and one trailing semicolon, then refuses any other semicolon outside a string literal. So two harmless statements are refused too.
 - One frozen phrasing is clumsy ("Who are our deliverys?"). The questions are frozen, so it stays.
-- The layer matrix found that the read-only URI alone allows `CREATE TEMP TABLE` and `SAVEPOINT`, and that `REINDEX` never reaches the authorizer. The text check stops both. The test pins these findings.
+- The layer matrix found that the read-only URI alone allows `CREATE TEMP TABLE` and `SAVEPOINT`, and that `REINDEX` never reaches the authorizer. The text check stops all three. The test pins these findings.
+- Three file attacks (`readfile`, `writefile`, `edit`) count as stopped because those functions do not exist in Python's SQLite, so the query fails with an error. The attacks table says so. A test also proves the authorizer would deny them if they did exist.
 
 ## Glossary
 

@@ -93,8 +93,11 @@ def cmd_hostile(args) -> int:
         got = hostile.outcome(atk.sql)
         ok = got == atk.expected_reason
         bad += not ok
-        print(f"{atk.id} {atk.attack_type:<12} {'blocked' if ok else 'MISMATCH'} {got}")
-    print(f"{len(attacks) - bad}/{len(attacks)} blocked with the expected reason")
+        word = "MISMATCH" if not ok else "error" if got == "sql_error" else "blocked"
+        print(f"{atk.id} {atk.attack_type:<12} {word} {got}")
+    errors = sum(a.expected_reason == "sql_error" for a in attacks)
+    print(f"{len(attacks) - bad}/{len(attacks)} stopped with the expected outcome "
+          f"({errors} of them by a SQLite error, not by the layer)")  # fmt: skip
     return 1 if bad else 0
 
 

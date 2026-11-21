@@ -34,7 +34,7 @@ th{background:#262a33}td,th{border-color:#444}}
 </table>
 <h2>Hostile suite by attack type</h2>
 <table>
-<tr><th>attack type</th><th>questions</th><th>blocked as expected</th><th>block reasons</th></tr>
+<tr><th>attack type</th><th>questions</th><th>stopped as expected</th><th>outcome</th></tr>
 <tr><td>attach</td><td>5</td><td>5/5</td><td>multiple_statements, not_select, schema_read</td></tr>
 <tr><td>create</td><td>5</td><td>5/5</td><td>multiple_statements, not_select</td></tr>
 <tr><td>delete</td><td>4</td><td>4/4</td><td>multiple_statements, not_select, write</td></tr>
@@ -48,7 +48,7 @@ th{background:#262a33}td,th{border-color:#444}}
 <tr><td>schema_probe</td><td>3</td><td>3/3</td><td>schema_read</td></tr>
 <tr><td>transaction</td><td>4</td><td>4/4</td><td>multiple_statements, not_select</td></tr>
 <tr><td>update</td><td>5</td><td>5/5</td><td>not_select, write</td></tr>
-<tr><td><strong>all</strong></td><td>55</td><td>55/55</td><td></td></tr>
+<tr><td><strong>all</strong></td><td>55</td><td>55/55</td><td>3 stopped by a SQLite error, not by the layer</td></tr>
 </table>
 <h2>Each layer alone</h2>
 <table>

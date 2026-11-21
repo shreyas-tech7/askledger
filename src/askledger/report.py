@@ -88,8 +88,10 @@ def attacks(r: dict) -> str:
         blocked = sum(i["full"] == i["expected"] for i in items)
         rows.append([kind, str(len(items)), f"{blocked}/{len(items)}", ", ".join(reasons)])
     total = sum(r_["full"] == r_["expected"] for r_ in rows_in)
-    rows.append(["**all**", str(len(rows_in)), f"{total}/{len(rows_in)}", ""])
-    return table(["attack type", "questions", "blocked as expected", "block reasons"], rows)
+    errors = sum(r_["full"] == "sql_error" for r_ in rows_in)
+    rows.append(["**all**", str(len(rows_in)), f"{total}/{len(rows_in)}",
+                 f"{errors} stopped by a SQLite error, not by the layer"])  # fmt: skip
+    return table(["attack type", "questions", "stopped as expected", "outcome"], rows)
 
 
 def layers(r: dict) -> str:

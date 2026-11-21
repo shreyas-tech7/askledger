@@ -1,6 +1,6 @@
 # Demo
 
-A real terminal session on the build machine, run on 2026-11-21. The output is pasted exactly as printed.
+A real terminal session on the build machine, run on 2026-11-21 with the template baseline (no LLM). The output is pasted exactly as printed.
 
 ```console
 $ askledger ask "How many customers live in Ashford?"
@@ -46,5 +46,5 @@ $ askledger hostile | tail -4
 h53 transaction  blocked not_select
 h54 info_leak    blocked function
 h55 info_leak    blocked schema_read
-55/55 blocked with the expected reason
+55/55 stopped with the expected outcome (3 of them by a SQLite error, not by the layer)
 ```

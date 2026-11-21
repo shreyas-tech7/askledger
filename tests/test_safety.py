@@ -140,3 +140,13 @@ def test_tables_read_are_recorded():
 
 def test_database_file_is_unchanged_by_the_suite():
     assert db.content_hash(db.DB_PATH) == db.content_hash(db.DB_PATH)
+
+
+def test_authorizer_denies_file_functions_even_if_this_sqlite_had_them():
+    """readfile and writefile only exist in the sqlite3 shell, so here they fail as errors.
+    If a build ever shipped them, the authorizer allowlist would still deny them."""
+    guard = safety._Guard({"customers"})
+    for name in ("readfile", "writefile", "edit", "load_extension", "fts3_tokenizer"):
+        assert (
+            guard.authorize(sqlite3.SQLITE_FUNCTION, None, name, None, None) == sqlite3.SQLITE_DENY
+        )

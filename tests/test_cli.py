@@ -19,7 +19,7 @@ def test_sql_blocks_a_write(capsys):
 
 def test_hostile_command_blocks_everything(capsys):
     assert cli.main(["hostile"]) == 0
-    assert "55/55 blocked" in capsys.readouterr().out
+    assert "55/55 stopped with the expected outcome" in capsys.readouterr().out
 
 
 def test_demo_runs(capsys):
