@@ -6,7 +6,7 @@
     "steps": [
       "./init.sh"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F02",
@@ -15,7 +15,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_network_guard.py"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F03",
@@ -24,7 +24,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_db.py"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F04",
@@ -33,7 +33,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_questions.py -k 'frozen or split'"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F05",
@@ -42,7 +42,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_questions.py -k gold"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F06",
@@ -51,7 +51,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_compare.py"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F07",
@@ -60,7 +60,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_evaluate.py"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F08",
@@ -69,7 +69,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_safety.py"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F09",
@@ -78,7 +78,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_safety.py -k authorizer_alone"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F10",
@@ -87,7 +87,7 @@
     "steps": [
       ".venv/bin/pytest tests/test_hostile.py"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "F11",
