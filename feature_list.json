@@ -1,0 +1,197 @@
+[
+  {
+    "id": "F01",
+    "area": "setup",
+    "description": "init.sh builds .venv, lints and runs every test offline",
+    "steps": [
+      "./init.sh"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F02",
+    "area": "setup",
+    "description": "Test guard fails any test that opens a non-local network connection, proven by a test",
+    "steps": [
+      ".venv/bin/pytest tests/test_network_guard.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F03",
+    "area": "data",
+    "description": "Seeded generator builds the synthetic SQLite database with refunds, a renamed product, nulls and a discontinued category",
+    "steps": [
+      ".venv/bin/pytest tests/test_db.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F04",
+    "area": "data",
+    "description": "Frozen question set: at least 200 questions in 3 tiers with gold SQL, 140 dev and the rest held out by family",
+    "steps": [
+      ".venv/bin/pytest tests/test_questions.py -k 'frozen or split'"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F05",
+    "area": "data",
+    "description": "Every gold query runs and returns a non-empty, deterministic result",
+    "steps": [
+      ".venv/bin/pytest tests/test_questions.py -k gold"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F06",
+    "area": "eval",
+    "description": "Comparison rules: multisets unless ordered, floats rounded to 2 decimals, column names ignored, each rule tested",
+    "steps": [
+      ".venv/bin/pytest tests/test_compare.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F07",
+    "area": "eval",
+    "description": "Eval harness: execution accuracy by tier and split with Wilson 95% intervals",
+    "steps": [
+      ".venv/bin/pytest tests/test_evaluate.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F08",
+    "area": "safety",
+    "description": "Safety layer: read-only URI, allowlist authorizer, row cap and time limit by progress handler, no ATTACH, no PRAGMA, no extension loading",
+    "steps": [
+      ".venv/bin/pytest tests/test_safety.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F09",
+    "area": "safety",
+    "description": "The authorizer alone blocks a write that gets past every other check",
+    "steps": [
+      ".venv/bin/pytest tests/test_safety.py -k authorizer_alone"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F10",
+    "area": "safety",
+    "description": "Hostile suite of at least 40 prompt-injection questions with hostile SQL, each with its expected block reason, all blocked",
+    "steps": [
+      ".venv/bin/pytest tests/test_hostile.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F11",
+    "area": "pipeline",
+    "description": "Schema linking with BM25 over table and column descriptions, with recall measured against the gold tables",
+    "steps": [
+      ".venv/bin/pytest tests/test_linking.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F12",
+    "area": "pipeline",
+    "description": "Template baseline generator for common question shapes, built from dev questions only",
+    "steps": [
+      ".venv/bin/pytest tests/test_templates.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F13",
+    "area": "pipeline",
+    "description": "LLM generator for any OpenAI-compatible free provider, with record mode and fixture replay",
+    "steps": [
+      ".venv/bin/pytest tests/test_llm.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F14",
+    "area": "pipeline",
+    "description": "Repair loop: on an SQL error the generator gets the error text and tries again, at most twice",
+    "steps": [
+      ".venv/bin/pytest tests/test_repair.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F15",
+    "area": "pipeline",
+    "description": "Answers: result table, SQL and a one-line plain explanation, with a log line per question",
+    "steps": [
+      ".venv/bin/askledger ask \"How many customers live in Ashford?\"",
+      ".venv/bin/pytest tests/test_pipeline.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F16",
+    "area": "eval",
+    "description": "Recorded free-model run on dev and held-out splits (record mode)",
+    "steps": [
+      ".venv/bin/askledger eval --generator llm --mode replay"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F17",
+    "area": "report",
+    "description": "README tables (accuracy by tier with Wilson intervals, repair 0/1/2, hostile table) are written by a script from results files and a test checks they match",
+    "steps": [
+      ".venv/bin/askledger eval",
+      ".venv/bin/askledger readme --check",
+      ".venv/bin/pytest tests/test_readme.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F18",
+    "area": "repo",
+    "description": "README quality bar sections, CI workflow with badge, actionlint clean, issue templates, CONTRIBUTING, CHANGELOG, topics",
+    "steps": [
+      ".venv/bin/pytest tests/test_repo.py",
+      "~/go/bin/actionlint"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F19",
+    "area": "repo",
+    "description": "Social preview PNG 1280x640 from a script, static results page in docs/ and real terminal transcript in docs/DEMO.md, link checker passes",
+    "steps": [
+      ".venv/bin/python scripts/make_social_preview.py",
+      ".venv/bin/python scripts/check_links.py"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F20",
+    "area": "docs",
+    "description": "Study-later kit: WALKTHROUGH, INTERVIEW_QA with the brief's interview points, DECISIONS",
+    "steps": [
+      ".venv/bin/pytest tests/test_repo.py -k study"
+    ],
+    "passes": false
+  },
+  {
+    "id": "F21",
+    "area": "release",
+    "description": "Release check done (review, security audit, gitleaks, pip-audit, ruff S, actionlint, links, outside check) and hand-off written (HUMAN_STEPS, COWORK_PROMPT, CHANGELOG SHA)",
+    "steps": [
+      "cat docs/RELEASE_CHECK.md",
+      "cat docs/HUMAN_STEPS.md"
+    ],
+    "passes": false
+  }
+]
