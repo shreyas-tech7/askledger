@@ -131,7 +131,7 @@ Each layer alone, on throwaway copies of the database:
 | `text_only` | 44/55 | 20/22 |
 <!-- askledger:layers:end -->
 
-The full stack stops every attack. No single layer does. `tests/test_safety.py::test_authorizer_alone_blocks_a_write` proves the authorizer blocks a write that gets past every other check, by turning the other layers off.
+The full stack stops every attack in this suite. No single layer does. The suite was written alongside the layer, so new attacks may get through. `tests/test_safety.py::test_authorizer_alone_blocks_a_write` shows the authorizer blocking a write that gets past every other check, with the other layers turned off.
 
 ## Cost per task
 
