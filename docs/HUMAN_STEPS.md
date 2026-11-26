@@ -8,7 +8,7 @@ Release commit: cf3d8a1348cda80f0c51602c67bfc7c3cb15dc72 on branch `claude/proje
 2. Create the tag on the release commit. Either run `git fetch origin`, then `git tag -a v0.1.0-rc1 cf3d8a1348cda80f0c51602c67bfc7c3cb15dc72 -m "Release candidate 1"`, then `git push origin v0.1.0-rc1`, or create a pre-release with that tag on the GitHub releases page.
 3. Run the secret scan once more: `gitleaks git -v .` in a fresh clone.
 4. Check that the CI run on the merge commit is green on the Actions page. CI never ran during the build, because the build session could not read GitHub Actions. Every CI step was run locally instead (see [RELEASE_CHECK.md](RELEASE_CHECK.md)).
-5. Make the repo public when you are ready. All history becomes public at that moment.
+5. Done 2026-11-26: the repo is public.
 6. Pages: optional. `docs/index.html` opens from disk. Turn on Pages from `/docs` only if you want it online.
 7. Upload `docs/social-preview.png` in Settings, General, Social preview. Fill in the About box from [GITHUB_ABOUT.md](GITHUB_ABOUT.md) and the topics from [topics.txt](topics.txt) if the coordinator did not.
 8. Pin the repo or list it in your profile README.

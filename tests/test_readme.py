@@ -50,4 +50,7 @@ def test_layer_claim_in_readme_matches_results():
     for name in hostile.LAYERS:
         if name != "full":
             assert any(r[name] == "allowed" for r in rows), name
-    assert "The full stack stops every attack. No single layer does." in report.README.read_text()
+    assert (
+        "The full stack stops every attack in this suite. No single layer does."
+        in report.README.read_text()
+    )
